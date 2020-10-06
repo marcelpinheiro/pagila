@@ -8,5 +8,5 @@ engine_pagila = create_engine(config('PAGILA_DB_AWS_POSTGRES'), echo=True)
 engine_producao = create_engine(config('PRODUCAO_DB_AWS_MYSQL'), echo=True)
 
 #Sessions
-session_pagila = sessionmaker(bind=engine_pagila)
-session_producao = sessionmaker(bind=engine_producao)
+pagila = sessionmaker(bind=engine_pagila)
+producao = sessionmaker(bind=engine_producao)

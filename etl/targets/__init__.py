@@ -6,7 +6,7 @@ sys.path.append(str((Path(__file__).parent/"..").resolve()))
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String, DateTime, UniqueConstraint
 
-from lib.db import get_or_create_and_maybe_update
+# from lib.db import get_or_create_and_maybe_update
 
 Base = declarative_base()
 
@@ -20,9 +20,7 @@ class Actor(Base):
 
 
 class Film(Base):
-    __tablename__ = 'film'
-    
-    KEY_COLUMNS = ('title')
+    __tablename__ = 'film'  
     __table_args__ = (UniqueConstraint(KEY_COLUMNS),)
     
     film_id = Column(Integer, primary_key = True)

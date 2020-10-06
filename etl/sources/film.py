@@ -6,10 +6,11 @@ from sqlalchemy import Column, Integer, String, DateTime, select, func
 
 Base = declarative_base()
 
-class Actor(Base):
-    __tablename__ = 'actor'
+class Film(Base):
+    __tablename__ = 'film'  
     
-    actor_id = Column(Integer, primary_key = True)
-    first_name = Column(String(50))
-    last_name = Column(String(50))
+    film_id = Column(Integer, primary_key = True)
+    title = Column(String(50))
+    description = Column(String(250))
+    release_year = Column(Integer)
     last_update = Column(DateTime)
